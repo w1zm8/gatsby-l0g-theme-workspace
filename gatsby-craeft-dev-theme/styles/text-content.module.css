@@ -1,5 +1,15 @@
+.article {
+  /* temp, test */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .content {
-  font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+  /* font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif; */
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, Arial,
+    Noto Sans, sans-serif, Apple Color Emoji, Segoe UI, Segoe UI Emoji,
+    Segoe UI Symbol, Noto Color emoji;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-size: 1.3rem;
@@ -8,7 +18,7 @@
 }
 
 .inner {
-  padding: 40px 60px calc(40px - 1.5em) 60px;
+  padding: 40px 60px 40px 60px;
 }
 
 .image {
@@ -29,4 +39,189 @@
 .dark {
   composes: content;
   background: var(--theme-dark-text-content-bg-color);
+}
+
+@media (max-width: 1100px) {
+  .content h1 {
+    font-size: 2.2rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 690px) {
+  .content {
+    margin: 0 -30px;
+  }
+
+  .inner {
+    padding: 20px 20px calc(40px - 1.5em) 20px;
+  }
+
+  .image {
+    height: 250px;
+  }
+
+  .image-inner {
+    border-radius: 0;
+  }
+
+  .content h1 {
+    font-size: 1.7rem;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+}
+
+/* Styles for markdown content */
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+}
+
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin-bottom: 2rem;
+}
+
+.content hr {
+  border: none;
+}
+
+.content header hr {
+  border-bottom-width: 2px;
+}
+
+.content h2,
+.content hr {
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+}
+
+.content h3 {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+.light h2,
+.light h3,
+.light hr {
+  border-bottom-color: #f1f4f8;
+}
+
+.dark h2,
+.dark h3,
+.dark hr {
+  border-bottom-color: #484848;
+}
+
+.content blockquote,
+dl,
+ol,
+p,
+table,
+ul {
+  font-size: 1.125rem !important;
+}
+
+.content blockquote {
+  margin: 0 0 1.5em;
+  padding: 1em 1.5em;
+  border-left: 3px solid var(--common-link-color);
+  font-family: "Roboto Mono", monospace;
+}
+
+.light blockquote {
+  background: #f1f4f8;
+}
+
+.dark blockquote {
+  background: #484848;
+}
+
+.content blockquote p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-style: italic;
+}
+
+.content blockquote p,
+.content blockquote ul,
+.content blockquote ol {
+  margin: 0;
+}
+
+.content :not(pre) > code {
+  padding: 4px 8px !important;
+  border-radius: 0.32rem;
+  font-size: 1rem;
+  border-radius: 0.35rem;
+  font-family: monospace;
+  display: inline-block;
+}
+
+.light :not(pre) > code {
+  color: #b83232;
+  background-color: #dadada;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+}
+
+.dark :not(pre) > code {
+  background-color: #212121;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #dc940d;
+}
+
+.dark table tr {
+  border-top: 1px solid #757575;
+}
+
+.content table th {
+  font-weight: bold;
+}
+
+.dark table th,
+.dark table td {
+  border: 1px solid #757575;
+  padding: 6px 13px;
+}
+
+.dark table tr {
+  border-top: 1px solid #757575;
+}
+
+.dark table th,
+.dark table td {
+  border: 1px solid #757575;
+  padding: 6px 13px;
+}
+
+.light table tr {
+  border-top: 1px solid #ccc;
+}
+
+.light table th,
+.light table td {
+  border: 1px solid #ddd;
+  padding: 6px 13px;
+}
+
+.light table tr {
+  border-top: 1px solid #ccc;
+}
+
+.light table th,
+.light table td {
+  border: 1px solid #ddd;
+  padding: 6px 13px;
 }

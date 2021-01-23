@@ -21,5 +21,7 @@ export { SEO } from "./Seo";
 export { AllTagsList } from "./AllTagsList";
 export { Breadcrumbs } from "./Breadcrumbs";
 export { Pagination } from "./Pagination";
+export { GoBackTo } from "./GoBackTo";
+export { Table } from "./Table";
 
 export { default as MainLayout } from "./MainLayout";

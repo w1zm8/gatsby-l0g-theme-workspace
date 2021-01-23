@@ -9,7 +9,7 @@ import {
   PostTags,
   TextContent,
   SEO,
-  Breadcrumbs,
+  GoBackTo,
 } from "../components";
 
 import { useTheme } from "../core";
@@ -47,21 +47,27 @@ const PostPage = ({
         title={frontmatter.title}
         description={excerpt}
       />
-      <Breadcrumbs
-        items={[
-          { to: "/", label: "Home" },
-          { to: "/blog", label: "Blog" },
-          { label: frontmatter.title },
-        ]}
-      />
-      <article>
+      <article
+        className="article"
+        style={{
+          width: "100%",
+          maxWidth: "1100px",
+          margin: "0 auto",
+        }}
+      >
+        <GoBackTo to="/blog" theme={theme}>
+          Go Back To Blog
+        </GoBackTo>
         <TextContent
           theme={theme}
           image={frontmatter.image.childImageSharp.fluid}
         >
-          <PostTags tags={frontmatter.tags || []} />
-          <PostInfo date={frontmatter.date} commentsCount={5} />
-          <h1>{frontmatter.title}</h1>
+          <header>
+            <h1>{frontmatter.title}</h1>
+            <PostInfo date={frontmatter.date} commentsCount={5} />
+            <PostTags tags={frontmatter.tags || []} />
+            <hr />
+          </header>
           {body && <MDXRenderer>{body}</MDXRenderer>}
           {/* See also (list of related posts) */}
           {/* Comments */}

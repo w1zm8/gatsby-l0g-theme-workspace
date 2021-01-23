@@ -1,0 +1,27 @@
+.wrapper {
+  display: inline-block;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.link:hover {
+  opacity: 0.6;
+}
+
+.link span {
+  margin-left: 10px;
+}
+
+.light {
+  composes: link;
+  color: var(--theme-light-second-text-color);
+}
+
+.dark {
+  composes: link;
+  color: var(--theme-dark-second-text-color);
+}

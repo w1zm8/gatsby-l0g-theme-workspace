@@ -1,4 +1,5 @@
 .breadcrumbs {
+  font-family: "Roboto Mono";
   margin-bottom: 1rem;
 }
 
@@ -9,4 +10,10 @@
 .splitter {
   margin: 0 0.5rem;
   opacity: 1;
+}
+
+@media (max-width: 690px) {
+  .breadcrumbs {
+    /* padding: 0 30px; */
+  }
 }

@@ -2,7 +2,8 @@
   --theme-dark-header-bg-color: #1c1c1d;
   --theme-dark-main-bg-color: #2a2a2d;
   --theme-dark-main-text-color: #f4f4f4;
-  --theme-dark-second-text-color: #cccccd;
+  /* --theme-dark-second-text-color: #cccccd; */
+  --theme-dark-second-text-color: #e2e2e2;
   --theme-dark-info-card-color: #3f3f42;
   /* --theme-dark-post-excerpt-bg-color: #3f3f42; */
   --theme-dark-post-excerpt-bg-color: #1c1c1d;
