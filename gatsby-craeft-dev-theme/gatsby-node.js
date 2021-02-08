@@ -7,6 +7,40 @@ const {
   POSTS_PER_PAGE,
 } = require("./options");
 
+const getRelatedPostsIds = (currentPost, posts) => {
+  const tags = currentPost.node.frontmatter.tags;
+  const relatedPosts = posts
+    .filter((post) => {
+      if (post.node.frontmatter.slug === currentPost.node.frontmatter.slug) {
+        return false;
+      }
+      const postTags = post.node.frontmatter.tags;
+
+      return postTags.some((postTag) => tags.includes(postTag));
+    })
+    .sort((a, b) => {
+      const aTags = a.node.frontmatter.tags;
+      const bTags = b.node.frontmatter.tags;
+      let aTagsCount = 0;
+      let bTagsCount = 0;
+
+      tags.forEach((tag) => {
+        if (aTags.includes(tag)) {
+          aTagsCount++;
+        }
+        if (bTags.includes(tag)) {
+          bTagsCount++;
+        }
+      });
+
+      return bTagsCount - aTagsCount;
+    })
+    .map(({ node }) => node.id)
+    .slice(0, 3);
+
+  return relatedPosts;
+};
+
 // replace with "src/utils/getTagsFromPosts.ts"
 const getTagsFromPosts = (posts) =>
   posts
@@ -72,17 +106,23 @@ const onPreBootstrap = ({ reporter }) => {
 const createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
-  // ------------ CREATING PAGES OF POSTS IN BLOG ------------
-
   const result = await graphql(`
     query {
-      allMdx(filter: { fileAbsolutePath: { regex: "/src/content/blog/" } }) {
+      allMdx(
+        filter: {
+          fileAbsolutePath: { regex: "/src/content/blog/" }
+          frontmatter: { hidden: { ne: true } }
+        }
+        sort: { fields: frontmatter___date, order: ASC }
+      ) {
         edges {
           node {
             id
             frontmatter {
               slug
               tags
+              title
+              date
             }
           }
         }
@@ -96,15 +136,26 @@ const createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allMdx.edges;
 
-  posts.forEach(({ node }) => {
+  // ------------ CREATING PAGES FOR EACH PUBLIC POST ------------
+
+  posts.forEach((currentPost, index) => {
+    const relatedPostsIds = getRelatedPostsIds(currentPost, posts);
+    const prevPost = index === 0 ? null : posts[index - 1];
+    const nextPost = index === posts.length - 1 ? null : posts[index + 1];
+
     createPage({
-      path: `${PAGES_ROUTES.blog.post}/${node.frontmatter.slug}`,
+      path: `${PAGES_ROUTES.blog.post}/${currentPost.node.frontmatter.slug}`,
       component: TEMPLATES.postPage,
-      context: { id: node.id },
+      context: {
+        id: currentPost.node.id,
+        relatedPostsIds,
+        nextPost,
+        prevPost,
+      },
     });
   });
 
-  // ------------ CREATING PAGE OF ALL TAGS ------------
+  // ------------ CREATING PAGE FOR ALL TAGS ------------
 
   const allTags = getTagsFromPosts(posts);
   const tagPostsCount = getTagsCount(allTags);
@@ -119,7 +170,7 @@ const createPages = async ({ graphql, actions, reporter }) => {
     },
   });
 
-  // ------------ CREATING PAGES OF TAGS POSTS ------------
+  // ------------ CREATING PAGES FOR TAG'S POSTS ------------
 
   tags.forEach((tag) => {
     const tagPagesCount = Math.ceil(tagPostsCount[tag] / POSTS_PER_PAGE);

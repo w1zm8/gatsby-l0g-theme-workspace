@@ -8,17 +8,19 @@ import styles from "../../styles/go-back-to.module.css";
 interface GoBackToProps {
   to: string;
   children: string;
+  direction?: "left" | "right";
   theme?: ThemeValue;
 }
 
 export const GoBackTo = ({
   to,
   children,
+  direction = "left",
   theme = DEFAULT_THEME,
 }: GoBackToProps) => {
   return (
-    <div className={styles.wrapper}>
-      <Link to={to} className={styles[theme]}>
+    <div className={styles[theme]}>
+      <Link to={to} className={styles[direction]}>
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16">
           <path
             stroke-linecap="round"
@@ -27,7 +29,9 @@ export const GoBackTo = ({
             d="M10 19l-7-7m0 0l7-7m-7 7h18"
           ></path>
         </svg>
-        <span>{children}</span>
+        <span>
+          {children.length > 40 ? `${children.substr(0, 40)}...` : children}
+        </span>
       </Link>
     </div>
   );

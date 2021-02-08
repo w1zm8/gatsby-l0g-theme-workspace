@@ -8,6 +8,7 @@ module.exports = {
     url: "https://localhost:8000",
     image: "",
     twitterUsername: "@w1zm8",
+    substackLink: "https://craeft.substack.com",
     nav: [
       { path: "/", name: "Home" },
       { path: "/blog", name: "Blog" },

@@ -1,27 +1,48 @@
 .wrapper {
   display: inline-block;
+  font-family: "Roboto Mono";
 }
 
-.link {
+.left {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.link:hover {
+.left:hover {
   opacity: 0.6;
 }
 
-.link span {
+.left span {
   margin-left: 10px;
 }
 
+.right {
+  composes: left;
+  flex-direction: row-reverse;
+}
+
+.right svg {
+  transform: rotate(180deg);
+}
+
+.right span {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
 .light {
-  composes: link;
+  composes: wrapper;
+}
+
+.light a {
   color: var(--theme-light-second-text-color);
 }
 
 .dark {
-  composes: link;
+  composes: wrapper;
+}
+
+.dark a {
   color: var(--theme-dark-second-text-color);
 }

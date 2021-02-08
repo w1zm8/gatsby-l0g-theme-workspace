@@ -24,5 +24,6 @@ export { Pagination } from "./Pagination";
 export { GoBackTo } from "./GoBackTo";
 export { Table } from "./Table";
 export { Code } from "./Code";
+export { SubscribingBlock } from "./SubscribingBlock";
 
 export { default as MainLayout } from "./MainLayout";
