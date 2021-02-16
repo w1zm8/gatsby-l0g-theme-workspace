@@ -58,7 +58,7 @@ export const query = graphql`
       limit: 6
       filter: {
         fileAbsolutePath: { regex: "/content/blog/" }
-        frontmatter: { hidden: { ne: true } }
+        frontmatter: { hidden: { ne: true }, type: { eq: "blog" } }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

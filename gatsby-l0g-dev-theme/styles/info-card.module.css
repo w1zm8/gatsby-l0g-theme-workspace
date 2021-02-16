@@ -14,6 +14,7 @@
 
 .dark {
   composes: info-card;
-  background-color: var(--theme-dark-info-card-color);
+  /* background-color: var(--theme-dark-info-card-color); */
+  background-color: #37383a;
   color: var(--theme-dark-second-text-color);
 }

@@ -22,7 +22,7 @@ export const PostsList = ({ posts: postsEdges, gridView }: PostsListProps) => {
         <PostCard
           key={post.slug}
           {...post}
-          to={`${PAGES_ROUTES.blog.post}/${post.slug}`}
+          to={`${PAGES_ROUTES.blog.article}/${post.slug}`}
           view={gridView}
         />
       ))}

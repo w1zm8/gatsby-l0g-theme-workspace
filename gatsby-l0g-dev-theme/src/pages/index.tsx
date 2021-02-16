@@ -33,33 +33,25 @@ const IndexPage = ({ data: { allMdx } }: PageProps<DataType>) => {
 
   return (
     <MainLayout>
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
-        <PostsListHeader title="Feed" theme={theme} />
-        <PageGrid>
-          <PostsSection>
-            <PostsList posts={allMdx.edges} gridView="row" />
-            {allMdx.totalCount > MAX_POSTS_COUNT_HOME_PAGE && (
-              <h3 className="text-center monospace">
-                <Link
-                  to={PAGES_ROUTES.blog.index}
-                  className="underline theme-link"
-                >
-                  view all
-                </Link>
-              </h3>
-            )}
-          </PostsSection>
-          <SidePanel>
-            <TagsBlock theme={theme} tags={tags} />
-          </SidePanel>
-        </PageGrid>
-      </div>
+      <PostsListHeader title="Feed" theme={theme} />
+      <PageGrid>
+        <PostsSection>
+          <PostsList posts={allMdx.edges} gridView="row" />
+          {allMdx.totalCount > MAX_POSTS_COUNT_HOME_PAGE && (
+            <h3 className="text-center monospace">
+              <Link
+                to={PAGES_ROUTES.blog.index}
+                className="underline theme-link"
+              >
+                view all
+              </Link>
+            </h3>
+          )}
+        </PostsSection>
+        <SidePanel>
+          <TagsBlock theme={theme} />
+        </SidePanel>
+      </PageGrid>
     </MainLayout>
   );
 };
@@ -69,7 +61,7 @@ export const query = graphql`
     allMdx(
       limit: 6
       filter: {
-        fileAbsolutePath: { regex: "/content/blog/" }
+        fileAbsolutePath: { regex: "/content/" }
         frontmatter: { hidden: { ne: true } }
       }
       sort: { fields: frontmatter___date, order: DESC }
@@ -82,6 +74,7 @@ export const query = graphql`
             slug
             date
             tags
+            type
             image {
               childImageSharp {
                 fluid(maxWidth: 1000) {

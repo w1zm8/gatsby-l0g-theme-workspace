@@ -16,7 +16,7 @@ export const AllTagsList = ({ tags, theme }: AllTagsListProps) => {
   return (
     <nav className={styles[theme]}>
       {Object.keys(tags).map((tag) => (
-        <Link to={`${PAGES_ROUTES.blog.tags}/${tag}`} key={`all-tags-${tag}`}>
+        <Link to={`${PAGES_ROUTES.tags.index}/${tag}`} key={`all-tags-${tag}`}>
           {tag} ({tags[tag]}){" "}
         </Link>
       ))}

@@ -30,7 +30,7 @@ export const PostTags = ({
     <div className={styles[direction]}>
       {displayedTags.map((tag) => (
         <div className={styles.tag} key={`${id}-${tag}`}>
-          <PostTag to={`${PAGES_ROUTES.blog.tags}/${tag}`}>{tag}</PostTag>
+          <PostTag to={`${PAGES_ROUTES.tags.index}/${tag}`}>{tag}</PostTag>
         </div>
       ))}
     </div>

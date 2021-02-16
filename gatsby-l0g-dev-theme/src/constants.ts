@@ -21,9 +21,16 @@ export const PAGES_ROUTES = {
   },
   blog: {
     index: "/blog",
-    post: "/blog/article",
-    tags: "/blog/tags",
+    article: "/blog/article",
     pagination: "/blog/page",
+  },
+  tags: {
+    index: "/tags",
+  },
+  feed: {
+    index: "/",
+    post: "/feed/post",
+    pagination: "/feed/page",
   },
   about: {
     index: "/about",
@@ -32,5 +39,7 @@ export const PAGES_ROUTES = {
     index: "/contact",
   },
 };
+
+export const RESOURCE_TYPE_ROUTES = {};
 
 export const POSTS_PER_PAGE = 6;

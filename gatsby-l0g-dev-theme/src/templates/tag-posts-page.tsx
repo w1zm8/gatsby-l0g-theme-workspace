@@ -8,6 +8,7 @@ import {
   Pagination,
   PostsList,
   PostsListHeader,
+  SidePanel,
 } from "../components";
 import { PAGES_ROUTES } from "../constants";
 import { useTheme } from "../core";
@@ -39,24 +40,25 @@ const TagPostsPage = ({
       <Breadcrumbs
         items={[
           { to: "/", label: "Home" },
-          { to: PAGES_ROUTES.blog.tags, label: "Tags" },
+          { to: PAGES_ROUTES.tags.index, label: "Tags" },
           { label: tag },
         ]}
       />
       <PostsListHeader title={`#${tag}`} theme={theme} />
       <PageGrid>
         <div style={{ width: "100%" }}>
-          <PostsList posts={allMdx.edges} gridView="tile" />
+          <PostsList posts={allMdx.edges} gridView="row" />
+          {pagesCount > 1 && (
+            <Pagination
+              routePath={`${PAGES_ROUTES.tags.index}/${tag}`}
+              theme={theme}
+              currentPage={currentPage}
+              pagesCount={pagesCount}
+            />
+          )}
         </div>
+        <SidePanel />
       </PageGrid>
-      {pagesCount > 1 && (
-        <Pagination
-          routePath={`${PAGES_ROUTES.blog.tags}/${tag}`}
-          theme={theme}
-          currentPage={currentPage}
-          pagesCount={pagesCount}
-        />
-      )}
     </MainLayout>
   );
 };

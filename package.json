@@ -9,5 +9,8 @@
   "workspaces": [
     "example",
     "gatsby-l0g-dev-theme"
-  ]
+  ],
+  "scripts": {
+    "start": "yarn workspace example develop"
+  }
 }

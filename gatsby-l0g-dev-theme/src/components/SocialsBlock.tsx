@@ -53,8 +53,9 @@ export const SocialsBlock = ({ theme }: SocialsBlockProps) => {
         {/* <h3>On The Web</h3> */}
         {siteMetadata.socials && (
           <nav>
-            {siteMetadata.socials.map((item) => (
+            {siteMetadata.socials.map((item, index) => (
               <a
+                key={`social-${index}`}
                 href={item.url}
                 className="theme-link monospace"
                 target="_blank"

@@ -1,17 +1,27 @@
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
 import { PostTags } from "./PostTags";
 import { InfoCard } from "./InfoCard";
 
 import { MAX_TAGS_COUNT, PAGES_ROUTES } from "../constants";
-import { ThemeValue } from "../types";
+import { PostEdge, ThemeValue } from "../types";
+import { getTagsFromPosts } from "../utils";
 
 interface TagsBlockProps {
-  tags: string[];
   theme?: ThemeValue;
 }
 
-export const TagsBlock = ({ tags, theme }: TagsBlockProps) => {
+interface DataType {
+  allMdx: {
+    edges: PostEdge[];
+    totalCount: number;
+  };
+}
+
+export const TagsBlock = ({ theme }: TagsBlockProps) => {
+  const { allMdx } = useStaticQuery<DataType>(query);
+  const tags = getTagsFromPosts(allMdx.edges);
+
   return (
     <InfoCard theme={theme}>
       <h3 className="monospace">Tags</h3>
@@ -22,7 +32,7 @@ export const TagsBlock = ({ tags, theme }: TagsBlockProps) => {
       />
       {tags.length > MAX_TAGS_COUNT.block && (
         <p>
-          <Link className="underline theme-link" to={PAGES_ROUTES.blog.tags}>
+          <Link className="underline theme-link" to={PAGES_ROUTES.tags.index}>
             ...more
           </Link>
         </p>
@@ -30,3 +40,25 @@ export const TagsBlock = ({ tags, theme }: TagsBlockProps) => {
     </InfoCard>
   );
 };
+
+export const query = graphql`
+  query TagsBlock {
+    allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/content/" }
+        frontmatter: { hidden: { ne: true } }
+      }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            tags
+          }
+        }
+      }
+      totalCount
+    }
+  }
+`;

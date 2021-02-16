@@ -22,6 +22,7 @@ export interface PostEdge {
       slug: string;
       date: string;
       tags: string[] | null;
+      type: string | null;
       image: {
         childImageSharp: {
           fluid: FluidObject;

@@ -1,13 +1,16 @@
-const POSTS_SLUG_PREFIX = "/blog";
+const BLOG_SLUG_PREFIX = "/blog";
+const POSTS_SLUG_PREFIX = "/posts";
 
 const CONTENT_PATHS = {
   site: `src/site`,
   images: `src/images`,
+  blog: `src/content${BLOG_SLUG_PREFIX}`,
   posts: `src/content${POSTS_SLUG_PREFIX}`,
 };
 
 const CONTENT_NAMES = {
   site: "site",
+  blog: "blog",
   posts: "posts",
   images: "images",
 };
@@ -40,8 +43,10 @@ const PAGES_ROUTES = {
   blog: {
     index: "/blog",
     post: "/blog/article",
-    tags: "/blog/tags",
     pagination: "/blog/page",
+  },
+  tags: {
+    index: "/tags",
   },
   about: {
     index: "/about",
@@ -57,7 +62,7 @@ module.exports = {
   CONTENT_PATHS,
   CONTENT_NAMES,
   CONTENT_REQUIRED_FILES,
-  POSTS_SLUG_PREFIX,
+  BLOG_SLUG_PREFIX,
   TEMPLATES,
   PAGES_ROUTES,
   POSTS_PER_PAGE,
