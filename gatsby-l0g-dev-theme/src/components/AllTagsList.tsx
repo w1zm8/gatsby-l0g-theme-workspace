@@ -3,7 +3,9 @@ import React from "react";
 import { ThemeValue } from "../types";
 import { PAGES_ROUTES } from "../constants";
 
-import styles from "../../styles/all-tags-list.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.allTagsList;
 
 interface AllTagsListProps {
   tags: { [key: string]: number };

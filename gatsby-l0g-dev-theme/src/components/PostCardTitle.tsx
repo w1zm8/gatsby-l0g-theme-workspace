@@ -4,7 +4,9 @@ import React from "react";
 import { DEFAULT_THEME } from "../constants";
 import { ThemeValue } from "../types";
 
-import styles from "../../styles/post-card-title.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.postCardTitle;
 
 interface PostCardTitleProps {
   children: string;

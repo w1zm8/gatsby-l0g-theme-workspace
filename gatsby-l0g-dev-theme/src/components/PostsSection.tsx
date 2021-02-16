@@ -1,6 +1,8 @@
 import React, { CSSProperties } from "react";
 
-import styles from "../../styles/posts-section.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.postsSection;
 
 interface PostsSectionProps {
   children: React.ReactNode;

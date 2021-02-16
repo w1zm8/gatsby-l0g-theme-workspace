@@ -1,25 +1,24 @@
 import { Link } from "gatsby";
 import React from "react";
 
-import { TAG_COLORS } from "../constants";
+import { StyleModules } from "../style-modules";
 
-import styles from "../../styles/post-tag.module.css";
+const styles = StyleModules.postTag;
 
 interface PostTagProps {
   to?: string;
   children: string;
-  color: typeof TAG_COLORS[number];
 }
 
-export const PostTag = ({ children, to, color }: PostTagProps) => {
+export const PostTag = ({ children, to }: PostTagProps) => {
   return (
     <>
       {to ? (
-        <Link to={to} className={styles[color]}>
+        <Link to={to} className={styles.tag}>
           #{children}
         </Link>
       ) : (
-        <span className={styles[color]}>#{children}</span>
+        <span className={styles.tag}>#{children}</span>
       )}
     </>
   );

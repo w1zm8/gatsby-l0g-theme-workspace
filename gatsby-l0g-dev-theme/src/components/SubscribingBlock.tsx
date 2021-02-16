@@ -2,7 +2,9 @@ import React, { FC } from "react";
 
 import { useMailchimpSubscription, useTheme } from "../core";
 
-import styles from "../../styles/subscribing-block.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.subscribingBlock;
 
 export const SubscribingBlock: FC = () => {
   const { theme } = useTheme();

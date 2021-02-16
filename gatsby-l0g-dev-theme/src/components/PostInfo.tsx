@@ -3,7 +3,9 @@ import React from "react";
 
 import { getFormattedDateString } from "../utils";
 
-import styles from "../../styles/post-info.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.postInfo;
 
 interface PostInfoProps {
   date: string;

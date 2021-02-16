@@ -12,7 +12,9 @@ import { PostInfo } from "./PostInfo";
 
 import { MAX_TAGS_COUNT } from "../constants";
 
-import styles from "../../styles/post-card.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.postCard;
 
 interface PostCardProps extends Post {
   to: string;

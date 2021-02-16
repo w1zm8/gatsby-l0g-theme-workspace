@@ -2,7 +2,9 @@ import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import theme from "prism-react-renderer/themes/vsDark";
 
-import styles from "../../styles/code.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.code;
 
 export const Code = ({ codeString, language }: any) => {
   return (

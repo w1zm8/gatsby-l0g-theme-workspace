@@ -1,6 +1,8 @@
 import React from "react";
 
-import styles from "../../styles/page-grid.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.pageGrid;
 
 interface PageGridProps {
   children: React.ReactNode;

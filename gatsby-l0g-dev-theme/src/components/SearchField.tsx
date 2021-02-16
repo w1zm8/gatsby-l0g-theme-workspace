@@ -1,6 +1,8 @@
 import React from "react";
 
-import styles from "../../styles/search-field.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.searchField;
 
 export const SearchField = () => {
   return (

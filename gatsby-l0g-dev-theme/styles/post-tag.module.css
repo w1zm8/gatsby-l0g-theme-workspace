@@ -4,6 +4,8 @@
   margin: 0 1rem 0 0;
   display: inline-block;
   font-size: 0.9rem;
+
+  color: var(--tag-color-orange);
 }
 
 .orange {

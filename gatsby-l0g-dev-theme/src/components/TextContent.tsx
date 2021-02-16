@@ -4,7 +4,9 @@ import Img, { FluidObject } from "gatsby-image";
 import { ThemeValue } from "../types";
 import { DEFAULT_THEME } from "../constants";
 
-import styles from "../../styles/text-content.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.textContent;
 
 interface TextContentProps {
   children?: React.ReactNode;

@@ -5,7 +5,7 @@ import { PostCard } from "./PostCard";
 import { GridViewValue, PostEdge } from "../types";
 import { getMappedPosts } from "../utils";
 
-import styles from "../../styles/posts-list.module.css";
+import { StyleModules } from "../style-modules";
 import { PAGES_ROUTES } from "../constants";
 
 interface PostsListProps {
@@ -17,7 +17,7 @@ export const PostsList = ({ posts: postsEdges, gridView }: PostsListProps) => {
   const posts = getMappedPosts(postsEdges);
 
   return (
-    <div className={styles.list}>
+    <div className={StyleModules.postsList.list}>
       {posts.map((post) => (
         <PostCard
           key={post.slug}

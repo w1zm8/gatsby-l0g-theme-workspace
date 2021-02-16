@@ -3,7 +3,9 @@ import React from "react";
 import { ThemeValue } from "../types";
 import { DEFAULT_THEME } from "../constants";
 
-import styles from "../../styles/page-title.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.pageTitle;
 
 interface PageTitleProps {
   children: string;

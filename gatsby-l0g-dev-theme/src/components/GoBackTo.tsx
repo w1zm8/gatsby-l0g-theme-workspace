@@ -3,7 +3,9 @@ import React from "react";
 import { DEFAULT_THEME } from "../constants";
 import { ThemeValue } from "../types";
 
-import styles from "../../styles/go-back-to.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.goBackTo;
 
 interface GoBackToProps {
   to: string;

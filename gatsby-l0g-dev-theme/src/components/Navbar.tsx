@@ -4,7 +4,9 @@ import { DEFAULT_THEME } from "../constants";
 import { NavItem, ThemeValue } from "../types";
 import { NavLink } from "./NavLink";
 
-import styles from "../../styles/navbar.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.navbar;
 
 interface NavbarProps {
   theme?: ThemeValue;

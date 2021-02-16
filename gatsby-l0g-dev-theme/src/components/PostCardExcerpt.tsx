@@ -2,7 +2,9 @@ import React from "react";
 import { DEFAULT_THEME } from "../constants";
 import { ThemeValue } from "../types";
 
-import styles from "../../styles/post-card-excerpt.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.postCardExcerpt;
 
 interface PostCardExcerptProps {
   children: string;

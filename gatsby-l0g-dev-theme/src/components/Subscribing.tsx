@@ -3,7 +3,9 @@ import { ThemeValue } from "../types";
 import { InfoCard } from "./InfoCard";
 import { useMailchimpSubscription } from "../core";
 
-import styles from "../../styles/subscribing.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.subscribing;
 
 interface SubscribingProps {
   theme?: ThemeValue;

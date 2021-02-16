@@ -9,7 +9,9 @@ import { Container } from "./Container";
 import { useTheme } from "../core";
 import { NavItem } from "../types";
 
-import headerStyles from "../../styles/header.module.css";
+import { StyleModules } from "../style-modules";
+
+const headerStyles = StyleModules.header;
 
 interface HeaderProps {
   logoTitle: string;

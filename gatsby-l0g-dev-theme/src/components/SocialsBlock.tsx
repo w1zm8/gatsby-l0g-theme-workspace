@@ -4,7 +4,9 @@ import { ThemeValue } from "../types";
 import { InfoCard } from "./InfoCard";
 import { Icons } from "./Icons";
 
-import styles from "../../styles/socials-block.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.socialsBlock;
 
 interface SocialsBlockProps {
   theme?: ThemeValue;

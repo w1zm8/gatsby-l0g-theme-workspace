@@ -1,7 +1,9 @@
 import { Link } from "gatsby";
 import React from "react";
 
-import styles from "../../styles/breadcrumbs.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.breadcrumbs;
 
 interface BreadcrumbsProps {
   items: { to?: string; label: string }[];

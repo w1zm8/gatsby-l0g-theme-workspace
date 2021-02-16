@@ -1,6 +1,8 @@
 import React from "react";
 
-import styles from "../../styles/table.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.table;
 
 interface TableProps {
   children: React.ReactNode;

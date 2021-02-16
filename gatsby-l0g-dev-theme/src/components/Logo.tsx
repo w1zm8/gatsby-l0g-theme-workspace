@@ -4,7 +4,9 @@ import React from "react";
 import { ThemeValue } from "../types";
 import { DEFAULT_THEME } from "../constants";
 
-import styles from "../../styles/logo.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.logo;
 
 interface LogoProps {
   title: string;

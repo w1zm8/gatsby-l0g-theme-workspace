@@ -4,7 +4,9 @@ import { GatsbyLinkProps, Link } from "gatsby";
 import { ThemeValue } from "../types";
 import { DEFAULT_THEME } from "../constants";
 
-import styles from "../../styles/nav-link.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.navLink;
 
 interface NavLinkProps
   extends Pick<GatsbyLinkProps<{}>, "to" | "className" | "children"> {

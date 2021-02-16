@@ -4,7 +4,9 @@ import { ThemeValue } from "../types";
 import { PageTitle } from "./PageTitle";
 // import { SearchField } from "./SearchField";
 
-import styles from "../../styles/posts-list-header.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.postsListHeader;
 
 interface PostsListHeaderProps {
   theme: ThemeValue;

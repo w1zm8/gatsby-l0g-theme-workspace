@@ -6,7 +6,9 @@ import { DEFAULT_THEME } from "../constants";
 import { Navbar } from "./Navbar";
 import { Container } from "./Container";
 
-import styles from "../../styles/footer.module.css";
+import { StyleModules } from "../style-modules";
+
+const styles = StyleModules.footer;
 
 interface FooterProps {
   theme?: ThemeValue;
