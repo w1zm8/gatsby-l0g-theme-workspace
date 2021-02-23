@@ -1,5 +1,9 @@
 const { CONTENT_NAMES, CONTENT_PATHS } = require("./options");
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   plugins: [
     `gatsby-plugin-sharp`,

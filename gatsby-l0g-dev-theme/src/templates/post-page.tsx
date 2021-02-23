@@ -18,7 +18,7 @@ import {
 } from "../components";
 
 import { useTheme } from "../core";
-import { PostEdge, PostType } from "../types";
+import { PostEdge, PostType, UtterancesConfig } from "../types";
 import {
   HOME_PAGES_TYPE_ROUTE,
   HOME_PAGES_TYPE_TITLES,
@@ -51,6 +51,7 @@ interface DataType {
 interface PageContextType {
   id: string;
   relatedPostsIds: string[];
+  utterancesConfig: UtterancesConfig;
 }
 
 const PostPage = ({
@@ -58,6 +59,7 @@ const PostPage = ({
     mdx: { frontmatter, body, excerpt },
     allMdx,
   },
+  pageContext: { utterancesConfig },
 }: PageProps<DataType, PageContextType>) => {
   const { theme } = useTheme();
   const { type, image, title, date, tags } = frontmatter;
@@ -102,7 +104,7 @@ const PostPage = ({
       </Container>
       <AboutBlock isColorishBg />
       <Container>
-        <Comments />
+        <Comments utterancesConfig={utterancesConfig} />
       </Container>
       {allMdx.edges.length > 0 && <RelatedPosts posts={allMdx.edges} />}
     </MainLayout>

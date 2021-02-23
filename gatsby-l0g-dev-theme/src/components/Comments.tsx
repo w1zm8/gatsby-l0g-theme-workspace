@@ -1,20 +1,19 @@
-import React from "react";
+import React, { FC } from "react";
 import { useTheme, useUtterancesComments } from "../core";
 import { icons } from "../icons";
+import { UtterancesConfig } from "../types";
 import { Icon } from "./Icon";
 
-export const Comments = () => {
+interface CommentsProps {
+  utterancesConfig: UtterancesConfig;
+}
+
+export const Comments: FC<CommentsProps> = ({ utterancesConfig }) => {
   const { theme } = useTheme();
-  const options = {
-    repo: process.env.UTTERANCES_REPO || "",
-    issueTerm: process.env.UTTERANCES_ISSUETERM || "",
-    label: process.env.UTTERANCES_LABEL || "",
-    id: process.env.UTTERANCES_ID || "",
-  };
   const { commentBlockRef } = useUtterancesComments({
     options: {
       theme,
-      ...options,
+      ...utterancesConfig,
     },
   });
 

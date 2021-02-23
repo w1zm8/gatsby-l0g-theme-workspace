@@ -58,3 +58,10 @@ export interface MailchimpResponse {
   msg: string;
   result: string;
 }
+
+export interface UtterancesConfig {
+  repo: string;
+  issueTerm: string;
+  label: string;
+  id: string;
+}

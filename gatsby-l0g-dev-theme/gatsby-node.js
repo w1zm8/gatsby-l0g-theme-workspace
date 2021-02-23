@@ -9,6 +9,13 @@ const {
   RELATED_POSTS_COUNT,
 } = require("./options");
 
+const UTTERANCES_CONFIG = {
+  repo: process.env.UTTERANCES_REPO,
+  issueTerm: process.env.UTTERANCES_ISSUETERM,
+  label: process.env.UTTERANCES_LABEL,
+  id: process.env.UTTERANCES_ID,
+};
+
 const getRelatedPostsIds = (currentPost, posts) => {
   const tags = currentPost.node.frontmatter.tags;
   const relatedPosts = posts
@@ -137,6 +144,7 @@ const createPostPage = (
     context: {
       id: currentPost.node.id,
       relatedPostsIds,
+      utterancesConfig: UTTERANCES_CONFIG,
       // nextPost,
       // prevPost,
     },

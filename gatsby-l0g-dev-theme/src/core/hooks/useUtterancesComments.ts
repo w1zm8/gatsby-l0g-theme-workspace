@@ -1,12 +1,8 @@
 import { useEffect, useRef } from "react";
-import { ThemeValue } from "../../types";
+import { ThemeValue, UtterancesConfig } from "../../types";
 
 export interface UseUtterancesCommentsParams {
-  options: {
-    repo: string;
-    issueTerm: string;
-    id: string;
-    label: string;
+  options: UtterancesConfig & {
     theme: ThemeValue;
   };
 }
