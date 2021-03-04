@@ -335,7 +335,12 @@ const createPages = async ({ graphql, actions, reporter }) => {
   // ------------ CREATING NOTES ------------
   const notesResult = await graphql(`
     {
-      allFile(filter: { absolutePath: { regex: "/content/notes/" } }) {
+      allFile(
+        filter: {
+          absolutePath: { regex: "/content/notes/" }
+          childMdx: { frontmatter: { hidden: { ne: true } } }
+        }
+      ) {
         edges {
           node {
             childMdx {

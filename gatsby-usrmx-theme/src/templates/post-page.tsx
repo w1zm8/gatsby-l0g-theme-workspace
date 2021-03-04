@@ -94,7 +94,7 @@ const PostPage = ({
             margin: "0 auto",
           }}
         >
-          <GoBackTo to={goBackToUrl} theme={theme}>
+          <GoBackTo type="link" to={goBackToUrl} theme={theme}>
             {goBackTitle}
           </GoBackTo>
           <TextContent theme={theme} image={image?.childImageSharp?.fluid}>

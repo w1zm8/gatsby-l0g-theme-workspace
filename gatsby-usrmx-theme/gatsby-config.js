@@ -59,16 +59,17 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1200,
+              maxWidth: 600,
             },
           },
           {
             resolve: "gatsby-remark-double-brackets-link",
             options: {
               titleToURLPath: `${__dirname}/utils/resolve-url.js`,
-              stripBrackets: true,
+              stripBrackets: false,
             },
           },
+          "gatsby-remark-double-parenthesis-link",
         ],
       },
     },

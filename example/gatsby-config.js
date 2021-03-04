@@ -17,7 +17,7 @@ module.exports = {
     nav: [
       { path: "/", name: "Home" },
       { path: "/blog", name: "Blog" },
-      { path: "/notes", name: "Notes" },
+      { path: "/notes/home", name: "Notes" },
       { path: "/about", name: "About" },
     ],
     copyright: "© usrmx.com 2021",

@@ -3,6 +3,12 @@
   font-family: "Roboto Mono";
 }
 
+.wrapper button {
+  border: none;
+  background: no-repeat;
+  outline: none;
+}
+
 .left {
   display: flex;
   align-items: center;
