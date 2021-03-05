@@ -3,7 +3,7 @@ slug: "something"
 date: "2021-09-01 13:40:00"
 title: "Something about"
 excerpt: "my excerpt..."
-image: "../../images/astronomical-clocks.jpg"
+image: "../images/astronomical-clocks.jpg"
 hidden: false
 tags:
   - something

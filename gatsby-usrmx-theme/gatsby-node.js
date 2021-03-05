@@ -190,7 +190,7 @@ const createPages = async ({ graphql, actions, reporter }) => {
     query {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/src/content/(blog|posts)/" }
+          fileAbsolutePath: { regex: "/content/(blog|posts)/" }
           frontmatter: { hidden: { ne: true } }
         }
         sort: { fields: frontmatter___date, order: ASC }

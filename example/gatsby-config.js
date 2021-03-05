@@ -50,8 +50,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `l0g.dev blog`,
-        short_name: `l0g.dev`,
+        name: `usrmx.com`,
+        short_name: `usrmx.com`,
         start_url: `/`,
         icon: "./static/images/favicon.png",
         display: `standalone`,

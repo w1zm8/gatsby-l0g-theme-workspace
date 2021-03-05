@@ -4,10 +4,10 @@ const NOTES_SLUG_PREFIX = "/notes";
 
 const CONTENT_PATHS = {
   site: `src/site`,
-  images: `src/images`,
-  blog: `src/content${BLOG_SLUG_PREFIX}`,
-  posts: `src/content${POSTS_SLUG_PREFIX}`,
-  notes: `src/content${NOTES_SLUG_PREFIX}`,
+  images: `content/images`,
+  blog: `content${BLOG_SLUG_PREFIX}`,
+  posts: `content${POSTS_SLUG_PREFIX}`,
+  notes: `content${NOTES_SLUG_PREFIX}`,
 };
 
 const CONTENT_NAMES = {
