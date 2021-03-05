@@ -36,8 +36,8 @@ export const PAGES_ROUTES = {
   about: {
     index: "/about",
   },
-  contact: {
-    index: "/contact",
+  notes: {
+    index: "/notes",
   },
 };
 

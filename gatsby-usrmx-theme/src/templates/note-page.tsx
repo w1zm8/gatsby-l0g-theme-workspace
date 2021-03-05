@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { useNavigate } from "@reach/router";
-import { graphql, Link, PageProps } from "gatsby";
+import { useLocation, useNavigate } from "@reach/router";
+import { graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { useTheme } from "../core";
 import {
@@ -10,6 +10,7 @@ import {
   SEO,
   TextContent,
 } from "../components";
+import { PAGES_ROUTES } from "../constants";
 
 interface DataType {
   mdx: {
@@ -21,6 +22,7 @@ const NotePage: FC<PageProps<DataType>> = ({ data }) => {
   const { theme } = useTheme();
   const { mdx } = data;
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   return (
     <MainLayout>
@@ -28,18 +30,23 @@ const NotePage: FC<PageProps<DataType>> = ({ data }) => {
       <Container>
         <SEO theme={theme} title="Notes" description="Digital Garden" />
         <article>
-          <GoBackTo
-            type="button"
-            theme={theme}
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
-            Back
-          </GoBackTo>
+          {pathname === `${PAGES_ROUTES.notes.index}/home` ? (
+            <GoBackTo type="link" theme={theme} to={PAGES_ROUTES.home.index}>
+              Go Back To Home Page
+            </GoBackTo>
+          ) : (
+            <GoBackTo
+              type="button"
+              theme={theme}
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
+              Back
+            </GoBackTo>
+          )}
           <TextContent theme={theme}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
-            <Link to="/">Back Home</Link>
           </TextContent>
         </article>
       </Container>
