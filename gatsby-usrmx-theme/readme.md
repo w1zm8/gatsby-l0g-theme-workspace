@@ -1,1 +1,1 @@
-# gatsby-l0g-dev-theme
+# gatsby-usrmx-theme
