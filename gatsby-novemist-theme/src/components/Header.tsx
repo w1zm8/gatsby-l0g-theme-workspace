@@ -28,13 +28,8 @@ export const Header = ({ logoTitle, navItems }: HeaderProps) => {
         <div className={headerStyles.inner}>
           <Logo title={logoTitle} theme={theme} />
           <div className={headerStyles.row}>
-            <Navbar
-              items={navItems}
-              currentPath={pathname}
-              theme={theme}
-              withLine
-            />
-            <ThemeSwitcher theme={theme} onToggle={toggleTheme} />
+            <Navbar items={navItems} currentPath={pathname} theme={theme} />
+            {/* <ThemeSwitcher theme={theme} onToggle={toggleTheme} /> */}
           </div>
         </div>
       </Container>

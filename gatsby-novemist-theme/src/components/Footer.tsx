@@ -11,7 +11,7 @@ import { StyleModules } from "../style-modules";
 const styles = StyleModules.footer;
 
 const themeRepositoryUrl =
-  "https://github.com/usrmx/gatsby-usrmx-theme-workspace";
+  "https://github.com/novemist/gatsby-novemist-theme-workspace";
 
 interface FooterProps {
   theme?: ThemeValue;
@@ -36,7 +36,7 @@ export const Footer = ({
               href={themeRepositoryUrl}
               target="_blank"
             >
-              usrmx theme
+              novemist theme
             </a>{" "}
             for{" "}
             <a

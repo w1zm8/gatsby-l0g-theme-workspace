@@ -13,6 +13,10 @@
   margin-right: 15px;
 }
 
+.nav-link:last-child {
+  margin-right: 0;
+}
+
 .light {
   composes: nav-link;
   color: var(--theme-light-second-text-color);
