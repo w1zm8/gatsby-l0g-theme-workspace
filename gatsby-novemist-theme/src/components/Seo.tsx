@@ -68,7 +68,9 @@ export const SEO = ({
   };
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
   const keywordsStr = keywords || site.siteMetadata.keywords;
-  const metaTitle = titleTemplate.replace("%s", seo.title);
+  const metaTitle = isHomePage
+    ? seo.title
+    : titleTemplate.replace("%s", seo.title);
 
   return (
     <Helmet
