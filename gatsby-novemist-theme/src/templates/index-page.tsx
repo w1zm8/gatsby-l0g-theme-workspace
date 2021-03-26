@@ -40,7 +40,7 @@ const IndexPage = ({
   const pagesCount = Math.ceil(allMdx.totalCount / POSTS_PER_PAGE);
 
   return (
-    <MainLayout>
+    <MainLayout isHomePage>
       <br />
       <Container>
         <PostsListHeader title="Feed" theme={theme} />
