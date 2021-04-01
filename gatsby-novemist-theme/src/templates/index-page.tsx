@@ -70,8 +70,11 @@ export const query = graphql`
     allMdx(
       limit: 6
       filter: {
-        fileAbsolutePath: { regex: "/content/(blog|posts)/" }
-        frontmatter: { hidden: { ne: true } }
+        fileAbsolutePath: { regex: "/content/" }
+        frontmatter: {
+          public: { in: true }
+          type: { regex: "/(blog|post|link)/" }
+        }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

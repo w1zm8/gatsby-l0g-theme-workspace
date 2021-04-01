@@ -75,8 +75,12 @@ export const query = graphql`
       limit: $limit
       skip: $skip
       filter: {
-        fileAbsolutePath: { regex: "/content/(blog|posts)/" }
-        frontmatter: { hidden: { ne: true }, tags: { in: [$tag] } }
+        fileAbsolutePath: { regex: "/content/" }
+        frontmatter: {
+          public: { in: true }
+          tags: { in: [$tag] }
+          type: { regex: "/(blog|post|link)/" }
+        }
       }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

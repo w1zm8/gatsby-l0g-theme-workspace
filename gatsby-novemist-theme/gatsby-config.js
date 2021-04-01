@@ -26,15 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: CONTENT_PATHS.blog,
-        name: CONTENT_NAMES.blog,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: CONTENT_PATHS.posts,
-        name: CONTENT_NAMES.posts,
+        path: `content/`,
+        name: "content",
       },
     },
     {
@@ -42,13 +35,6 @@ module.exports = {
       options: {
         path: CONTENT_PATHS.site,
         name: CONTENT_NAMES.site,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: CONTENT_PATHS.notes,
-        name: CONTENT_NAMES.notes,
       },
     },
     {

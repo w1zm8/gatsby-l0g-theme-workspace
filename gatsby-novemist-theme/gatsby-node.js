@@ -190,8 +190,11 @@ const createPages = async ({ graphql, actions, reporter }) => {
     query {
       allMdx(
         filter: {
-          fileAbsolutePath: { regex: "/content/(blog|posts)/" }
-          frontmatter: { hidden: { ne: true } }
+          fileAbsolutePath: { regex: "/content/" }
+          frontmatter: {
+            public: { in: true }
+            type: { regex: "/(blog|post|link)/" }
+          }
         }
         sort: { fields: frontmatter___date, order: ASC }
       ) {
@@ -337,8 +340,10 @@ const createPages = async ({ graphql, actions, reporter }) => {
     {
       allFile(
         filter: {
-          absolutePath: { regex: "/content/notes/" }
-          childMdx: { frontmatter: { hidden: { ne: true } } }
+          absolutePath: { regex: "/content/" }
+          childMdx: {
+            frontmatter: { public: { in: true }, type: { in: [null, "note"] } }
+          }
         }
       ) {
         edges {
