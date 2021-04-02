@@ -24,7 +24,7 @@ export const PostTags = ({
     return null;
   }
 
-  const displayedTags = tags.slice(0, maxCount);
+  const displayedTags = tags.map((tag) => tag.toLowerCase()).slice(0, maxCount);
 
   return (
     <div className={styles[direction]}>
