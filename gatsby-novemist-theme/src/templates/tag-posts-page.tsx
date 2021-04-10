@@ -10,6 +10,7 @@ import {
   PostsList,
   PostsListHeader,
   PostsSection,
+  SEO,
   SidePanel,
 } from "../components";
 import { PAGES_ROUTES } from "../constants";
@@ -42,6 +43,7 @@ const TagPostsPage = ({
     <MainLayout title="Tags">
       <br />
       <Container>
+        <SEO theme={theme} title={tag ? `#${tag}` : "Tags"} />
         <Breadcrumbs
           items={[
             { to: "/", label: "Home" },

@@ -3,26 +3,32 @@ import { graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { useTheme } from "../core";
 import {
+  AboutBlock,
   Container,
   GoBackTo,
   MainLayout,
+  PostShareButtons,
   PostTags,
   SEO,
   TextContent,
 } from "../components";
-import { PAGES_ROUTES } from "../constants";
+import { PAGES_ROUTES, RESOURCES_TYPE_ROUTE } from "../constants";
 
 interface DataType {
   mdx: {
     body: string;
+    excerpt: string | null;
     frontmatter: {
       tags: [] | null;
+      keywords: string[] | null;
     };
   };
 }
 
 interface PageContextType {
   title: string | null;
+  slug: string;
+  convertkitEndpoint: string | null;
 }
 
 const NotePage: FC<PageProps<DataType, PageContextType>> = ({
@@ -31,7 +37,10 @@ const NotePage: FC<PageProps<DataType, PageContextType>> = ({
 }) => {
   const { theme } = useTheme();
   const { mdx } = data;
-  const { title } = pageContext;
+  const { title, slug, convertkitEndpoint } = pageContext;
+  const postUrl = `${RESOURCES_TYPE_ROUTE.note}/${slug}`;
+
+  console.log("data", data);
 
   return (
     <MainLayout>
@@ -40,7 +49,8 @@ const NotePage: FC<PageProps<DataType, PageContextType>> = ({
         <SEO
           theme={theme}
           title={title || "Note"}
-          description="Digital Garden"
+          description={data.mdx.excerpt}
+          keywords={data.mdx.frontmatter.keywords}
         />
         <article>
           <GoBackTo
@@ -56,9 +66,13 @@ const NotePage: FC<PageProps<DataType, PageContextType>> = ({
               <hr />
             </header>
             <MDXRenderer>{mdx.body}</MDXRenderer>
+            <PostShareButtons postTitle={title || "Note"} postUrl={postUrl} />
           </TextContent>
         </article>
       </Container>
+      {convertkitEndpoint && (
+        <AboutBlock isColorishBg convertkitEndpoint={convertkitEndpoint} />
+      )}
     </MainLayout>
   );
 };
@@ -69,8 +83,10 @@ export const query = graphql`
   query($slug: String!) {
     mdx(slug: { eq: $slug }) {
       body
+      excerpt
       frontmatter {
         tags
+        keywords
       }
     }
   }

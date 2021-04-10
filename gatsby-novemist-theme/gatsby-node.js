@@ -388,6 +388,7 @@ const createPages = async ({ graphql, actions, reporter }) => {
       context: {
         slug,
         title: node.childMdx.frontmatter.title,
+        convertkitEndpoint: process.env.CONVERTKIT_ENDPOINT,
       },
     });
   });

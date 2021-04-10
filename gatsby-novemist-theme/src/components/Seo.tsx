@@ -24,7 +24,7 @@ const query = graphql`
 
 interface SEOProps {
   title?: string;
-  description?: string;
+  description?: string | null;
   image?: {
     src: string;
     height: string;
@@ -32,7 +32,7 @@ interface SEOProps {
   };
   isArticle?: boolean;
   theme?: ThemeValue;
-  keywords?: string[];
+  keywords?: string[] | null;
   isHomePage?: boolean;
 }
 
@@ -86,7 +86,7 @@ export const SEO = ({
         <meta property="og:description" content={seo.description} />
       )}
       {canonical && <link rel="canonical" href={canonical} />}
-      <meta name="keywords" content={keywordsStr.join(",")} />
+      <meta name="keywords" content={keywordsStr.join(", ")} />
       {seo.image && <meta property="og:image" content={seo.image} />}
       {metaImage && (
         <meta property="og:image:width" content={metaImage.width} />
