@@ -96,7 +96,8 @@
   border: none;
 }
 
-.content header hr {
+.content header hr,
+.content footer hr {
   border-bottom-width: 2px;
 }
 

@@ -40,8 +40,6 @@ const NotePage: FC<PageProps<DataType, PageContextType>> = ({
   const { title, slug, convertkitEndpoint } = pageContext;
   const postUrl = `${RESOURCES_TYPE_ROUTE.note}/${slug}`;
 
-  console.log("data", data);
-
   return (
     <MainLayout>
       <br />
@@ -61,12 +59,16 @@ const NotePage: FC<PageProps<DataType, PageContextType>> = ({
             Go Back To Notes
           </GoBackTo>
           <TextContent theme={theme}>
-            <header>
-              <PostTags tags={mdx.frontmatter.tags || []} />
-              <hr />
-            </header>
+            {mdx.frontmatter.tags && (
+              <header>
+                <PostTags tags={mdx.frontmatter.tags || []} />
+                <hr />
+              </header>
+            )}
             <MDXRenderer>{mdx.body}</MDXRenderer>
-            <PostShareButtons postTitle={title || "Note"} postUrl={postUrl} />
+            <footer>
+              <PostShareButtons postTitle={title || "Note"} postUrl={postUrl} />
+            </footer>
           </TextContent>
         </article>
       </Container>
