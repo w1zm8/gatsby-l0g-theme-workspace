@@ -1,7 +1,7 @@
 // import { Link } from "gatsby";
 import React from "react";
 
-import { getFormattedDateString } from "../utils";
+// import { getFormattedDateString } from "../utils";
 
 import { StyleModules } from "../style-modules";
 
@@ -20,7 +20,7 @@ export const PostInfo = ({
 PostInfoProps) => {
   return (
     <div className={styles.info}>
-      {date && <time dateTime={date}>{getFormattedDateString(date)}</time>}
+      {date && <time dateTime={date}>{date}</time>}
       {/* <span> | </span> */}
       {/* <Link to={`${postLink}#comments`}>{`${commentsCount} ${
         commentsCount === 1 ? "comment" : "comments"
