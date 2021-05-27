@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
 
-import { STORAGE_THEME_KEY, THEMES } from "../../constants";
-import { ThemeValue } from "../../types";
-import { getInitialThemeValue } from "../../utils";
+import { STORAGE_THEME_KEY, THEMES } from "../constants";
+import { ThemeValue } from "../types";
+import { getInitialThemeValue } from "../utils";
 
 type ThemeContextValue = {
   theme: ThemeValue;

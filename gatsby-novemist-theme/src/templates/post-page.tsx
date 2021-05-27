@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
-import { FixedObject, FluidObject } from "gatsby-image";
+import { FluidObject } from "gatsby-image";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import {
@@ -17,7 +17,7 @@ import {
   PostShareButtons,
 } from "../components";
 
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 import { PostEdge, PostType, UtterancesConfig } from "../types";
 import {
   HOME_PAGES_TYPE_ROUTE,

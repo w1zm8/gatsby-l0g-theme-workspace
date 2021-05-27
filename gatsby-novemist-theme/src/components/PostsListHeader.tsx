@@ -1,10 +1,8 @@
 import React, { CSSProperties } from "react";
+
 import { ThemeValue } from "../types";
-
-import { PageTitle } from "./PageTitle";
-// import { SearchField } from "./SearchField";
-
 import { StyleModules } from "../style-modules";
+import { PageTitle } from "./PageTitle";
 
 const styles = StyleModules.postsListHeader;
 

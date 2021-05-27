@@ -1,8 +1,9 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+
 import { ThemeValue } from "../types";
 import { InfoCard } from "./InfoCard";
-import { icons } from "../icons";
+import { icons, IconsKeys } from "../icons";
 
 import { StyleModules } from "../style-modules";
 
@@ -34,7 +35,7 @@ interface SiteQueryData {
             {
               name: string;
               url: string;
-              icon: string;
+              icon: IconsKeys;
             }
           ]
         | null;

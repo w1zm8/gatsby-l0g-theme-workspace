@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Container, MainLayout, SEO } from "../components";
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 
 const NotFoundPage = () => {
   const { theme } = useTheme();

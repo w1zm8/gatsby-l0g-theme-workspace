@@ -14,7 +14,7 @@ import {
   SidePanel,
 } from "../components";
 import { PAGES_ROUTES } from "../constants";
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 import { PostEdge } from "../types";
 
 interface DataType {

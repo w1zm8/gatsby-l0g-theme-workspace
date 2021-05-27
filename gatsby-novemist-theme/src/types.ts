@@ -5,7 +5,7 @@ export type ThemeValue = typeof THEMES.light | typeof THEMES.dark;
 
 export type GridViewValue = "row" | "tile";
 
-export type PostType = "post" | "blog" | "link" | "note";
+export type PostType = "post" | "blog" | "link";
 
 export interface Post {
   title: string;

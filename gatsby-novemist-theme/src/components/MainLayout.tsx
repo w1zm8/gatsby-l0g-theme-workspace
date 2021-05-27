@@ -6,7 +6,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { SEO } from "./Seo";
 
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 import { NavItem } from "../types";
 
 import "../../styles/main.css";

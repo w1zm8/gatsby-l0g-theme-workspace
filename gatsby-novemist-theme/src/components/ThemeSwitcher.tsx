@@ -1,8 +1,9 @@
 import React from "react";
-import { ThemeValue } from "../types";
-import { icons } from "../icons";
+
 import { Icon } from "./Icon";
 
+import { ThemeValue } from "../types";
+import { icons } from "../icons";
 import { StyleModules } from "../style-modules";
 
 const styles = StyleModules.themeSwitcher;

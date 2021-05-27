@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { useTheme, useConvertkitEmailSubscription } from "../core";
+import { useTheme, useConvertkitEmailSubscription } from "../hooks";
 
 import { StyleModules } from "../style-modules";
 import { Icon } from "./Icon";

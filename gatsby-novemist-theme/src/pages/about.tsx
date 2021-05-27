@@ -2,10 +2,14 @@ import React from "react";
 import { PageProps, graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import { Container, PostsListHeader } from "../components";
-import { Breadcrumbs, MainLayout } from "../components";
-import { TextContent } from "../components";
-import { useTheme } from "../core";
+import {
+  Container,
+  PostsListHeader,
+  TextContent,
+  Breadcrumbs,
+  MainLayout,
+} from "../components";
+import { useTheme } from "../hooks";
 
 interface DataType {
   mdx: {

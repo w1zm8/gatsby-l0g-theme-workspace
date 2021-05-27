@@ -1,12 +1,13 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
 import React from "react";
+import { graphql, Link, useStaticQuery } from "gatsby";
+
 import { PostTags } from "./PostTags";
 import { InfoCard } from "./InfoCard";
+import { Icon } from "./Icon";
 
 import { MAX_TAGS_COUNT, PAGES_ROUTES } from "../constants";
 import { PostEdge, ThemeValue } from "../types";
 import { getTagsFromPosts } from "../utils";
-import { Icon } from "./Icon";
 import { icons } from "../icons";
 
 interface TagsBlockProps {

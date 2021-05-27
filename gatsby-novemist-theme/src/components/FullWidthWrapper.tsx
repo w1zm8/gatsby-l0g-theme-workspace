@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 
 import { StyleModules } from "../style-modules";
 

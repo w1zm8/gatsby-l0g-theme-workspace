@@ -4,7 +4,7 @@ import { Blurb } from "./Blurb";
 import { Subscribing } from "./Subscribing";
 import { SocialsBlock } from "./SocialsBlock";
 
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 
 import { StyleModules } from "../style-modules";
 

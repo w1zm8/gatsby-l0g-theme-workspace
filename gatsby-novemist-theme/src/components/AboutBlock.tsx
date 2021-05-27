@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 import { Container } from "./Container";
 
 import { InfoCard } from "./InfoCard";

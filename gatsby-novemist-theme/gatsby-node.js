@@ -392,18 +392,22 @@ const createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+};
 
-  // ------------ CREATING SUBSCRIPTION PAGE ------------
+const onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+
   createPage({
-    path: PAGES_ROUTES.subscribe.index,
-    component: TEMPLATES.subscriptionPage,
+    ...page,
     context: {
+      ...page.context,
       convertkitEndpoint: process.env.CONVERTKIT_ENDPOINT,
     },
   });
-};
+}
 
 module.exports = {
   onPreBootstrap,
   createPages,
+  onCreatePage,
 };

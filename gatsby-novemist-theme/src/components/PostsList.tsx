@@ -6,7 +6,6 @@ import { GridViewValue, PostEdge } from "../types";
 import { getMappedPosts } from "../utils";
 
 import { StyleModules } from "../style-modules";
-import { RESOURCES_TYPE_ROUTE } from "../constants";
 
 interface PostsListProps {
   posts: PostEdge[];

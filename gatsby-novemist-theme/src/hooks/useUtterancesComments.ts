@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ThemeValue, UtterancesConfig } from "../../types";
+import { ThemeValue, UtterancesConfig } from "../types";
 
 export interface UseUtterancesCommentsParams {
   options: UtterancesConfig & {

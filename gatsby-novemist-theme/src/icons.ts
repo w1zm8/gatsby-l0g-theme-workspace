@@ -41,3 +41,5 @@ export const icons = {
   emojiHouseWithGarden,
   emojiEmail,
 };
+
+export type IconsKeys = keyof typeof icons;

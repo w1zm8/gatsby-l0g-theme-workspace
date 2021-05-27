@@ -1,3 +1,5 @@
+import { PostType } from "./types";
+
 export const THEMES = {
   dark: "dark",
   light: "light",
@@ -49,7 +51,9 @@ export const RESOURCES_TYPE_ROUTE = {
   note: PAGES_ROUTES.notes.post,
 };
 
-export const HOME_PAGES_TYPE_ROUTE = {
+export const HOME_PAGES_TYPE_ROUTE: {
+  [key in PostType]: string;
+} = {
   blog: PAGES_ROUTES.blog.index,
   post: PAGES_ROUTES.feed.index,
   link: PAGES_ROUTES.feed.index,

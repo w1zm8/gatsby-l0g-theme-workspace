@@ -1,10 +1,11 @@
 import React from "react";
+
 import { ThemeValue } from "../types";
 import { InfoCard } from "./InfoCard";
-import { useConvertkitEmailSubscription } from "../core";
-
-import { StyleModules } from "../style-modules";
 import { Icon } from "./Icon";
+
+import { useConvertkitEmailSubscription } from "../hooks";
+import { StyleModules } from "../style-modules";
 import { icons } from "../icons";
 
 const styles = StyleModules.subscribing;
@@ -15,14 +16,13 @@ interface SubscribingProps {
 }
 
 export const Subscribing = ({
-  theme,
+  theme = "dark",
   convertkitEndpoint,
 }: SubscribingProps) => {
   const {
     FORM_URL,
     handleSubmit,
     handleChangeEmail,
-    handleTryAgain,
     email,
     isInitialStatus,
     isSuccessStatus,

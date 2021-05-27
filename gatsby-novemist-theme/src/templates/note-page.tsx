@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { useTheme } from "../core";
+
+import { useTheme } from "../hooks";
 import {
   AboutBlock,
   Container,

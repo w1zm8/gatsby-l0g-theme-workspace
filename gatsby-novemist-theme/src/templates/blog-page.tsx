@@ -13,7 +13,7 @@ import {
   Container,
 } from "../components";
 import { PostEdge } from "../types";
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 import { PAGES_ROUTES, POSTS_PER_PAGE } from "../constants";
 
 interface DataType {

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { useTheme, useUtterancesComments } from "../core";
+import { useTheme, useUtterancesComments } from "../hooks";
 import { icons } from "../icons";
 import { UtterancesConfig } from "../types";
 import { Icon } from "./Icon";

@@ -12,7 +12,7 @@ import {
   Container,
   AboutBlock,
 } from "../components";
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 import { PostEdge } from "../types";
 import { PAGES_ROUTES } from "../constants";
 

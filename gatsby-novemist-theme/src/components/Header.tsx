@@ -6,7 +6,7 @@ import { Logo } from "./Logo";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Container } from "./Container";
 
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 import { NavItem } from "../types";
 
 import { StyleModules } from "../style-modules";

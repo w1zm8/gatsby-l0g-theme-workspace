@@ -3,7 +3,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { preToCodeBlock } from "mdx-utils";
 
 import { Table, Code } from "./src/components";
-import { ThemeProvider } from "./src/core";
+import { ThemeProvider } from "./src/hooks";
 
 const components = {
   table: Table,

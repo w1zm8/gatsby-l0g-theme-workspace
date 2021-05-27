@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 import { GridViewValue, Post } from "../types";
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 
 import { PostCardTitle } from "./PostCardTitle";
 import PostCardExcerpt, { VARIANT } from "./PostCardExcerpt";
@@ -35,7 +35,7 @@ export const PostCard = ({
   const styleName = `${view}${capitalize(theme)}`;
   let to = "/";
 
-  if (type === null || type === "note") {
+  if (type === null) {
     to = `${RESOURCES_TYPE_ROUTE.note}/${slug}`;
   } else {
     to = `${RESOURCES_TYPE_ROUTE[type]}/${slug}`;

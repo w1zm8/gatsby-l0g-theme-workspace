@@ -10,7 +10,7 @@ import {
   PostsListHeader,
   SidePanel,
 } from "../components";
-import { useTheme } from "../core";
+import { useTheme } from "../hooks";
 
 interface PageContextType {
   tags: string[];
