@@ -45,6 +45,8 @@ interface DataType {
         };
       };
       keywords?: string[];
+      imageCopyright?: string;
+      imageCopyrightUrl?: string;
     };
     body: string;
   };
@@ -68,7 +70,16 @@ const PostPage = ({
   pageContext: { utterancesConfig, convertkitEndpoint },
 }: PageProps<DataType, PageContextType>) => {
   const { theme } = useTheme();
-  const { type, image, title, date, tags, keywords } = frontmatter;
+  const {
+    type,
+    image,
+    imageCopyright,
+    imageCopyrightUrl,
+    title,
+    date,
+    tags,
+    keywords,
+  } = frontmatter;
   const goBackToUrl = type ? HOME_PAGES_TYPE_ROUTE[type] : "/";
   const goBackTitle = type ? HOME_PAGES_TYPE_TITLES[type] : "";
   const postUrl = type
@@ -97,7 +108,12 @@ const PostPage = ({
           <GoBackTo type="link" to={goBackToUrl} theme={theme}>
             {goBackTitle}
           </GoBackTo>
-          <TextContent theme={theme} image={image?.childImageSharp?.fluid}>
+          <TextContent
+            theme={theme}
+            image={image?.childImageSharp?.fluid}
+            imageCopyright={imageCopyright}
+            imageCopyrightUrl={imageCopyrightUrl}
+          >
             <header>
               <h1>{title}</h1>
               <PostInfo date={date} />
@@ -145,6 +161,8 @@ export const query = graphql`
           }
         }
         keywords
+        imageCopyright
+        imageCopyrightUrl
       }
       body
     }
